@@ -28,7 +28,7 @@ const parseTemplate = (templateCopy: any, context: any, path: string = '') => {
 	return templateCopy;
 };
 
-const operations = {
+const operations: any = {
 
 	'#foreach': (options: any = {}, context: any = {}, path: string = '') => {
 
