@@ -1,0 +1,37 @@
+{
+    "name": "mongowb",
+    "version": "1.0.0",
+    "description": "An expression evaluator that wants to be MongoDB.",
+    "main": "dist/mongoWB.js",
+    "types": "dist/typings.d.ts",
+    "scripts": {
+        "build": "tsc",
+        "start": "npm run serve",
+        "serve": "node dist/mongoWB.js",
+        "watch-node": "nodemon dist/mongoWB.js",
+        "watch-ts": "tsc -w",
+        "test": "mocha --reporter spec"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cityheroes/mongowb.git"
+    },
+    "author": "CityHeroes Inc",
+    "license": "Apache",
+    "bugs": {
+        "url": "https://github.com/cityheroes/mongowb/issues"
+    },
+    "homepage": "https://github.com/cityheroes/mongowb#readme",
+    "devDependencies": {
+        "@types/node": "^10.9.4",
+        "chai": "^4.1.2",
+        "mocha": "^5.2.0",
+        "nodemon": "^1.18.4",
+        "ts-loader": "^5.1.1",
+        "tslint": "^5.11.0",
+        "typescript": "^3.0.3"
+    },
+    "dependencies": {
+        "formula-values": "^1.0.4"
+    }
+}
