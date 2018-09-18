@@ -10,7 +10,7 @@ var serverConf = {
 	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),
-		filename: 'mongoWB.node.js',
+		filename: 'mongoWB.js',
 		libraryTarget: 'umd',
 		library: 'mongoWB'
 	},
