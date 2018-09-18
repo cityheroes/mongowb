@@ -1,5 +1,7 @@
 ## MongoWB™
 
+An expression evaluator that wants to be like MongoDB.
+
 - Object that has a MongoWB™ operations as a property
 - The parameters of the operation are in the value.
 
