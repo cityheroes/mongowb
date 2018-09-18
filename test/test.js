@@ -9,24 +9,30 @@ function getRandomInt(min, max) {
 describe('mongoWB orders tests', () => {
 	var context = {
 		orders: [
-		{
-			provider: 'Beef n Bunz',
-			product: 'Beef n Bunz',
-			amount: 21,
-			comments: 'White bread, rare'
-		},
-		{
-			provider: '727',
-			product: 'Four Cheese Philly',
-			amount: 14,
-			comments: 'Meat only, with jalapeños'
-		},
-		{
-			provider: 'La Estancia',
-			product: 'Tenderloin',
-			amount: 7,
-			comments: 'Rare'
-		}
+			{
+				provider: 'Beef n Bunz',
+				product: 'Beef n Bunz',
+				amount: 21,
+				comments: 'White bread, rare'
+			},
+			{
+				provider: '727',
+				product: 'Four Cheese Philly',
+				amount: 14,
+				comments: 'Meat only, with jalapeños'
+			},
+			{
+				provider: 'La Estancia',
+				product: 'Tenderloin',
+				amount: 7,
+				comments: 'Rare'
+			},
+			{
+				provider: 'Pollos Santa Lucía',
+				product: 'Chicken Tenders',
+				amount: 1,
+				comments: 'Deep fried yuca'
+			}
 		]
 	},
 	recipe = {
@@ -46,7 +52,7 @@ describe('mongoWB orders tests', () => {
 		]
 	};
 	var result = mongoWB(recipe, context),
-		size = result ? result.length : 0;
+		size = result ? result.length : 1;
 
 	it('Should be an array', () => {
 		expect(result).to.be.an('array');
@@ -57,18 +63,20 @@ describe('mongoWB orders tests', () => {
 		expect(result[randomItem]).to.be.an('object');
 	});
 
-	it('Should contain an object with an index property', () => {
-		var randomItem = getRandomInt(0, size - 1);
+	it('Should contain an object (except the last item) with an index property', () => {
+		var randomItem = getRandomInt(0, size - 2);
 		expect(result[randomItem]).to.have.own.property('index');
 	});
 
 	it('Should contain an object with a text property', () => {
 		var randomItem = getRandomInt(0, size - 1);
-		expect(result[randomItem]).to.have.own.property('index');
+		expect(result[randomItem]).to.have.own.property('text');
 	});
 
-	it('Should contain text from first order: ' + context.orders[0].product, () => {
-		expect(result[0].text).to.equal('Pick 21 Beef n Bunz');
+	it('Should contain the name of the product from a random item (except the last one)', () => {
+		var randomItem = getRandomInt(0, size - 2),
+			productText = context.orders[randomItem].product;
+		expect(result[randomItem].text).to.contain(productText);
 	});
 
 });
