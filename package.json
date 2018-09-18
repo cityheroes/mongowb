@@ -6,7 +6,7 @@
     "types": "dist/typings.d.ts",
     "scripts": {
         "build": "webpack --display-error-details",
-        "build-tsc": "tsc",
+        "build-ts": "tsc",
         "watch-ts": "tsc -w",
         "test": "mocha --reporter spec"
     },
