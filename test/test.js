@@ -1,6 +1,6 @@
 'use strict';
 var expect = require('chai').expect;
-var mongoWB = require('../dist/mongoWB.node.js').default;
+var mongoWB = require('../dist/mongoWB.js').default;
 
 function getRandomInt(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
