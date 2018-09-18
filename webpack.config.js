@@ -27,7 +27,7 @@ var common = {
 	}
 };
 
-var serverConf = Object.assign(common, {
+var serverConf = Object.assign({}, common, {
 	target: 'node',
 	output: {
 		path: path.resolve(__dirname, 'dist'),
@@ -37,7 +37,7 @@ var serverConf = Object.assign(common, {
 	}
 });
 
-var webConf = Object.assign(common, {
+var webConf = Object.assign({}, common, {
 	target: 'web',
 	output: {
 		path: path.resolve(__dirname, 'dist'),
