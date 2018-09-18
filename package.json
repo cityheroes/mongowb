@@ -1,15 +1,12 @@
 {
     "name": "mongowb",
     "version": "1.0.0",
-    "description": "An expression evaluator that wants to be MongoDB.",
+    "description": "An expression evaluator that wants to be like MongoDB.",
     "main": "dist/mongoWB.js",
     "types": "dist/typings.d.ts",
     "scripts": {
-        "build": "tsc",
-        "build-wp": "webpack --display-error-details",
-        "start": "npm run serve",
-        "serve": "node dist/mongoWB.js",
-        "watch-node": "nodemon dist/mongoWB.js",
+        "build": "webpack --display-error-details",
+        "build-tsc": "tsc",
         "watch-ts": "tsc -w",
         "test": "mocha --reporter spec"
     },
@@ -27,7 +24,6 @@
         "@types/node": "^10.9.4",
         "chai": "^4.1.2",
         "mocha": "^5.2.0",
-        "nodemon": "^1.18.4",
         "ts-loader": "^5.1.1",
         "tslint": "^5.11.0",
         "typescript": "^3.0.3",
