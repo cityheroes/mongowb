@@ -1,0 +1,17 @@
+{
+  "name": "mongowb",
+  "description": "An expression evaluator that wants to be like MongoDB.",
+  "main": "dist/mongoWB.web.js",
+  "authors": [
+    "CityHeroes Inc"
+  ],
+  "license": "Apache",
+  "homepage": "https://github.com/cityheroes/mongowb",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
